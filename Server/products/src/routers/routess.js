@@ -51,11 +51,8 @@ router.get('/getImage', (req, res) =>{
             data.map(img => {
                 fs.writeFileSync(path.join(__dirname, `../dbimages/${img.nam_img}`), img.dat_img)
             })
-            delete data[0].dat_img
-            delete data[0].id_prd
-            res.json(data)
+                res.json(data)
         })
-
     })
 })
 

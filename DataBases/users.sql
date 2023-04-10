@@ -20,4 +20,3 @@ TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public.users
     OWNER to postgres;
 
---Configurar el usuario y contraseña de postgres dentro del arquivo de .env de server/auch

@@ -1,0 +1,8 @@
+App de react con micro servicios de node.
+Esta es para una prueba de conocimientos.
+
+- Configurar el usuario y contraseña de postgres dentro del arquivo de .env de server/auch.
+
+Algunos de los eventos y funciones estan hechos de diferentes formas para mostrar deferentes conocimientos.
+
+- Nelson Alejandro Guerrero Labrador.
