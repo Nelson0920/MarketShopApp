@@ -7,17 +7,17 @@
 	place-items: center;
 }
 .Login-container {
+	position: relative;
 	background: white;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	width: 350px;
 	height: 420px;
 	border-radius: 20px;
-	padding: 3px;
+	padding: 20px;
 	box-shadow: 2px 2px 10px 5px rgba(150, 150, 150, 0.404);
 }
-.title {
-	margin-left: 50%;
+.titleL {
 	text-align: center;
 }
 .form {
@@ -38,13 +38,17 @@
 	margin-left: 10px;
 }
 .input {
-	background-color: var(--text-input-field);
+	background-color: var(--background-inputs);
 	border: none;
 	border-radius: 8px;
 	height: 30px;
 	font-size: var(--md);
 	padding: 6px;
 	margin-bottom: 12px;
+	outline: none;
+}
+.input:focus {
+	border: 1px solid var(--hospital-green);
 }
 .input-email {
 	margin-bottom: 22px;
@@ -75,6 +79,18 @@
 .login-button {
 	margin-top: 14px;
 	margin-bottom: 30px;
+}
+.alertError2{
+	position: absolute;
+	background-color: var(--background-alertErrors);
+	color: white;
+	font-size: 20px;
+	width: 80%;
+	height: 30px;
+	text-align: center;
+	top: -30px;
+	left: 10%;
+	border-radius: 5px 5px 0px 0px;
 }
 @media (max-width: 640px) {
 	.logo {

@@ -7,13 +7,14 @@
 	place-items: center;
 }
 .CreateAccount-container {
+	position: relative;
 	background: white;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	width: 400px;
 	height: 580px;
 	border-radius: 20px;
-	padding: 3px;
+	padding: 20px;
 	box-shadow: 2px 2px 10px 5px rgba(150, 150, 150, 0.404);
 }
 .logo {
@@ -22,11 +23,8 @@
 	justify-self: center;
 	display: none;
 }
-.title {
-	font-size: var(--lg);
-	margin-bottom: 36px;
-	margin-left: 38%;
-	text-align: start;
+.titleA {
+	text-align: center;
 }
 .form {
 	display: flex;
@@ -42,13 +40,17 @@
 	margin-bottom: 4px;
 }
 .input {
-	background-color: var(--text-input-field);
+	background-color: var(--background-inputs);
 	border: none;
 	border-radius: 8px;
 	height: 30px;
 	font-size: var(--md);
 	padding: 6px;
 	margin-bottom: 12px;
+	outline: none;
+}
+.input:focus {
+	border: 1px solid var(--hospital-green);
 }
 .input-name,
 .input-email,
@@ -69,6 +71,18 @@
 .login-button {
 	margin-top: 14px;
 	margin-bottom: 30px;
+}
+.alertError{
+	position: absolute;
+	background-color: var(--background-alertErrors);
+	color: white;
+	font-size: 20px;
+	width: 80%;
+	height: 30px;
+	top: -30px;
+	left: 10%;
+	border-radius: 5px 5px 0px 0px;
+	text-align: center;
 }
 @media (max-width: 640px) {
 	.form-container {

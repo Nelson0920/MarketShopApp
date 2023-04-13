@@ -1,12 +1,27 @@
-App de react con micro servicios de node.
+App de Market con Reactjs y micro servicios de Nodejs.
+
 
 Esta es para una prueba de conocimientos.
 
 
-- Configurar el usuario y contraseña de postgres dentro del archivo de .env de server/auch.
+-Configuración del proyecto
+
+1. Configurar el usuario y contraseña de postgres dentro del archivo de .env en la ruta de server/auch.
+
+2. Importar en sus respectivos servidores las bases de datos de Mysql y Postgresql que están dentro de la carpeta DataBases.
+
+3. Dentro de la carpeta de Cliente y a su vez dentro de la carpeta MarketShopApp, Ejecutar el comando (npm start) para correr el cliente.
+
+4. Dentro de la carpeta de Server y a su vez dentro de la carpeta auht, Ejecutar el comando (npm run dev) para correr el primer servicio.
+
+5. Dentro de la carpeta de Server y a su vez dentro de la carpeta products, Ejecutar el comando (npm run dev) para correr el segundo servicio.
+
+6. Crear un primer usuario y desde la base de datos de postgres previamente cargada la cual se llama Register_Users, colocar el niv_usr en "admin", para poder acceder a la función del admin dentro de la página.
+
 
 
 Algunos de los eventos y funciones están hechos de diferentes formas para mostrar deferentes conocimientos.
+
 
 
 - Nelson Alejandro Guerrero Labrador.

@@ -99,10 +99,8 @@ const ProductList = () => {
 
 	const buscar = () => {
 		let nam = document.getElementById('name').value
-		console.log(nam)
 		setfilter(nam.replace(/\s+/g, '').toLowerCase())
 	}
-	console.log(filter2)
 	let data = products.map(product => {
 		return product
 	})
@@ -117,14 +115,11 @@ const ProductList = () => {
 	})
 
 	if (data2.length != 0) {
-		console.log(data2)
 		products = data2
 	} if (data3.length != 0) {
-		console.log(data3)
 		products = data3
 	}
 	if (data4.length != 0) {
-		console.log(data4)
 		products = data4
 	}
 

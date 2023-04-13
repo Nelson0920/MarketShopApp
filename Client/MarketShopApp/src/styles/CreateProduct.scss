@@ -7,13 +7,14 @@
 	place-items: center;
 }
 .product-container {
+	position: relative;
 	background: rgb(255, 255, 255);
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	width: 400px;
 	height: 600px;
 	border-radius: 20px;
-	padding: 3px;
+	padding: 20px;
 	box-shadow: 2px 2px 10px 5px rgba(150, 150, 150, 0.404);
 }
 
@@ -35,13 +36,17 @@
 	margin-left: 10px;
 }
 .input {
-	background-color: var(--text-input-field);
+	background-color: var(--background-inputs);
 	border: none;
 	border-radius: 8px;
 	height: 30px;
 	font-size: var(--md);
 	padding: 6px;
 	margin-bottom: 12px;
+	outline: none;
+}
+.input:focus {
+	border: 1px solid var(--hospital-green);
 }
 .input-email {
 	margin-bottom: 22px;
@@ -71,6 +76,9 @@
 .login-button {
 	margin-top: 14px;
 	margin-bottom: 30px;
+}
+.titleP{
+	text-align: center;
 }
 @media (max-width: 640px) {
 	.logo {

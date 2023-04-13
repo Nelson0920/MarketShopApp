@@ -26,18 +26,15 @@
 .navbar-left ul {
 	margin-left: 12px;
 }
-.navbar-left ul li a,
-.navbar-right ul li a{
+.createProductsButton{
 	text-decoration: none;
 	color: white;
 	border: 1px solid var(--white);
 	margin-top: 10px;
 	padding: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
 	border-radius: 8px;
-}
-.navbar-left ul li a:hover,
-.navbar-right ul li a:hover {
-	border: 1px solid var(--hospital-green);
 }
 .navbar-email {
 	color: var(--very-light-pink);

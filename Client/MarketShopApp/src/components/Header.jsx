@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import '@styles/Header.scss';
 import menu from '@icons/icon_menu.svg'
 import iconCart from '@icons/icon_shopping_cart.svg'
@@ -15,20 +15,20 @@ const Header = () => {
 	const [toggle, setToggle] = useState(false)
 	const [toggleOrders, setToggleOrders] = useState(false)
 
-	const {state} = useContext(AppContext)
+	const { state } = useContext(AppContext)
 
-	const handleToggle = () =>{
+	const handleToggle = () => {
 		setToggle(!toggle)
 	}
-	const handleToggleOrders = () =>{
+	const handleToggleOrders = () => {
 		setToggleOrders(!toggleOrders)
 	}
-	let createProduct 
-	if(cookies.get('niv_acc') == "admin"){
+	let createProduct
+	if (cookies.get('niv_acc') == "admin") {
 		createProduct =
-		<li>
-			<Button variant="contained" href="/create-product">Create product</Button>
-		</li> 
+			<li className='createProductsButton'>
+				<Button variant="contained" href="/create-product">Create product</Button>
+			</li>
 	}
 
 	return (
@@ -36,17 +36,15 @@ const Header = () => {
 			<img src={menu} alt="menu" className="menu" />
 			<div className="navbar-left">
 				<h1>MarketShopApp</h1>
-				<ul>
-					{createProduct}
-				</ul>
 			</div>
 			<div className="navbar-right">
 				<ul>
 					<li className="navbar-email" >
 						{`USER: ${cookies.get('name_usr')} // ${cookies.get('ema_usr')}`}
 					</li>
-					<li>
-						<Button variant="contained" className='button' onClick={handleToggle}>Menu</Button>
+					{createProduct}
+					<li className='createProductsButton'>
+						<Button variant="contained" onClick={handleToggle}>Menu</Button>
 					</li>
 					<li className="navbar-shopping-cart" onClick={handleToggleOrders}>
 						<img src={iconCart} alt="shopping cart" />
@@ -54,8 +52,8 @@ const Header = () => {
 					</li>
 				</ul>
 			</div>
-			{toggle && <Menu/>}	
-			{toggleOrders && <MyOrder/>}
+			{toggle && <Menu />}
+			{toggleOrders && <MyOrder />}
 		</nav>
 	);
 }

@@ -4,41 +4,51 @@ import '@styles/CreateProduct.scss';
 
 const CreateProduct = () => {
     const [file, setFiles] = useState(null)
+    const [Error, setError] = useState('')
 
     const upFile = e => {
-        console.log(e)
         setFiles(e.target.files[0])
     }
 
     const handleSubmit = (event) =>{
-        console.log(event)
 		event.preventDefault()
         if(!file){
-            alert("You must upload file")
+            setError(
+                <div className='alertError2'>
+                    <b>You must upload file!!!</b>
+                </div>
+            )
             return
         }else{
             var name = document.getElementById("name").value
             var price = document.getElementById("price").value
             var num = document.getElementById("num").value
             var category = document.getElementById("category").value
-
-            const formData = new FormData()
-            formData.append('image', file)
-            formData.append('data', name)
-            formData.append('data1', price)
-            formData.append('data2', num)
-            formData.append('data3', category)
-            instance2.post("/upload", formData)
-            .then((result = result.text()) => {
-            })
-            .then(res => {
-                console.log(res)
-                setlistUpdate(true)
+            
+            if (name && price && num && category) {
+                const formData = new FormData()
+                formData.append('image', file)
+                formData.append('data', name)
+                formData.append('data1', price)
+                formData.append('data2', num)
+                formData.append('data3', category)
+                instance2.post("/upload", formData)
+                .then((result = result.text()) => {
+                })
+                .then(res => {
+                    setlistUpdate(true)
+                }
+                ).catch((err) => {
+                    console.error(err)
+                });
+                setFiles(null)
+            }else{
+                setError(
+					<div className='alertError2'>
+						<b>Complete all fields!!!</b>
+					</div>
+				)
             }
-            ).catch((err) => {
-                console.error(err)
-            });
-            setFiles(null)
         }
 	}
 
@@ -48,6 +58,8 @@ const CreateProduct = () => {
 	return (
 		<div className="Login">
 			<div className="product-container">
+            {Error}
+            <h1 className="titleP">Create Products</h1>
 				<form action="/" className="form" encType='multipar/form-data'>
 					<label htmlFor="email" className="label">Name of Product</label>
                     <input type="text" id='name'  className="input input-email"/>
